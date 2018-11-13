@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arbutus+Slab" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+      <link href="https://s3-us-west-1.amazonaws.com/trailblazer-static-files/Description/style.css" rel="stylesheet" >
+     <link href="https://s3-us-west-1.amazonaws.com/trailblazer-static-files/Comparisons/styles.css" rel="stylesheet">
+
+
+    <title>FEC Demo</title>
+  </head>
+  <body>
+     <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+     <div id="details"></div>
+    <div id="productDescriptions"></div>
+    <div id="app"></div>
+    <div id="root"></div>
+
+    <script src="https://s3-us-west-1.amazonaws.com/trailblazer-static-files/Details/bundle.js"></script>
+    <script src="https://s3-us-west-1.amazonaws.com/trailblazer-static-files/Description/bundle.js"></script>
+    <script src="https://s3-us-west-1.amazonaws.com/trailblazer-static-files/Comparisons/bundle.js"></script>
+    <script src="https://s3-us-west-1.amazonaws.com/trailblazer-static-files/Reviews/bundle.js"></script>
+
+    <script>
+      ReactDOM.render(
+        React.createElement(App),
+        document.getElementById('details')
+      );
+      ReactDOM.render(
+        React.createElement(App),
+        document.getElementById('productDescriptions')
+      );
+      ReactDOM.render(
+        React.createElement(App),
+        document.getElementById('app')
+      );
+      ReactDOM.render(
+        React.createElement(App),
+        document.getElementById('root')
+      );
+    </script>
+  </body>
+</html>

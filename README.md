@@ -1,1 +1,1 @@
-# Proxy Server for SDC Project
+# LindseyProxy
