@@ -1,1 +1,1 @@
-# LindseyProxy
+# SDC Proxy Repo
