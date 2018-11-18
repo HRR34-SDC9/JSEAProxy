@@ -12,7 +12,8 @@
     "build-prod": "webpack --config webpack.prod.js --open",
     "db:setup": "node database/seed.js",
     "test": "jest --watch --verbose",
-    "stage": "lint-staged"
+    "stage": "lint-staged",
+    "generate": "node database/generate.js"
   },
   "husky": {
     "hooks": {
@@ -76,6 +77,8 @@
   "dependencies": {
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
+    "csv-generate": "^3.0.0",
+    "csv-stringify": "^4.3.1",
     "express": "^4.16.4",
     "mongodb": "^3.1.8",
     "mongoose": "^5.3.6",
