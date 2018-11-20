@@ -50,8 +50,8 @@ const generate = require("csv-generate");
   */
 
   let count = 1;
-  let endCount = 100;
-  let divisor = 10;
+  let endCount = 10000001;
+  let divisor = 1000000;
 
   const writeStream = fs.createWriteStream(__dirname + '/data.csv');
 
@@ -98,18 +98,6 @@ const generate = require("csv-generate");
   //   return products;
   // };
 
-  // streamCSV.pipe(writeStream);
-  // streamCSV.write(createMockProducts());
-  // console.log(products);
-  // streamCSV.end();
-
-  // writeStream.on('finish', () => { resolve(console.timeEnd('time to generate')) });
-  // writeStream.on('error', () => {console.error(error)});
-
-// });
-
-
-
 // stringify(createMockProducts(), {
 //   header: true,
 //   columns: ['_id', 'name', 'rating', 'reviewCount', 'itemNum', 'price', 'mainImage', 'images']
@@ -138,8 +126,6 @@ const generate = require("csv-generate");
 //     }
 //   // })
 // });
-
-module.exports = generate;
 
 
 
