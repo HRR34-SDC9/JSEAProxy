@@ -5,14 +5,15 @@ module.exports = {
   development: {
     client: 'mysql',
     connection: {
-      port: process.env.db_port,
+      // port: process.env.db_port,
       host: process.env.db_host,
-      database: process.env.db_name,
       user: process.env.db_user,
       password: process.env.db_key,
+      database: process.env.db_name,
     },
+    debug: false,
     pool: {
-      min: 2,
+      min: 0,
       max: 10
     },
     migrations: {
