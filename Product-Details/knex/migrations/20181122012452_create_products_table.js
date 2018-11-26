@@ -8,9 +8,7 @@ exports.up = function(knex, Promise) {
     t.integer('itemNum').notNullable();
     t.integer('price').notNullable();
     t.string('mainImage');
-    t.json('images');
-    t.timestamp('created_at').defaultTo(knex.fn.now());
-    t.timestamp('updated_at').defaultTo(knex.fn.now());
+    t.text('images');
   })
   .then(() => console.log('table created'))
   .catch((err) => {

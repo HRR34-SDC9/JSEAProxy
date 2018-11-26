@@ -11,7 +11,6 @@ module.exports = {
       password: process.env.db_key,
       database: process.env.db_name,
     },
-    debug: false,
     pool: {
       min: 0,
       max: 10
