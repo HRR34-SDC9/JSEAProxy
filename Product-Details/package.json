@@ -86,6 +86,7 @@
     "mongodb": "^3.1.8",
     "mongoose": "^5.3.6",
     "mysql": "^2.16.0",
+    "mysql2": "^1.6.4",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
     "react-star-ratings": "^2.3.0",

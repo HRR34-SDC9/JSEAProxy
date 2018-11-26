@@ -10,16 +10,18 @@ module.exports = {
       database: process.env.db_name,
       user: process.env.db_user,
       password: process.env.db_key,
+      connectTimeout: 90000
     },
+    debug: true,
     pool: {
-      min: 2,
-      max: 10
+      min: 1,
+      max: 20,
     },
     migrations: {
       directory: __dirname + '/knex/migrations',
     },
     seeds: {
       directory: __dirname + '/knex/seeds',
-    }
+    },
   }
 };
