@@ -61,10 +61,10 @@ const generate = require("csv-generate");
     read() {
       if (count === 1) {
         console.time(`time to generate these rows`);
-        this.push('_id, name, rating, reviewCount, itemNum, price, mainImage, images\n');
+        this.push('_id\tname\trating\treviewCount\titemNum\tprice\tmainImage\timages\n');
       }
 
-      this.push(`${count}, ${faker.commerce.productName()}, ${faker.finance.amount(1, 5, 1)}, ${faker.random.number({min: 20, max: 150})},${count}, ${faker.commerce.price(50, 500)}, https://s3-us-west-1.amazonaws.com/hrr34-trailblazer/${faker.random.number({ min: 1, max: 100 })}-min.jpg, ${JSON.stringify(populateImages(count))}\n`);
+      this.push(`${count}\t${faker.commerce.productName()}\t${faker.finance.amount(1, 5, 1)}\t${faker.random.number({min: 20, max: 150})}\t${count}\t${faker.commerce.price(50, 500)}\thttps://s3-us-west-1.amazonaws.com/hrr34-trailblazer/${faker.random.number({ min: 1, max: 100 })}-min.jpg\t${JSON.stringify(populateImages(count))}\n`);
 
       count++
       if (count === endCount) {
@@ -127,6 +127,4 @@ const generate = require("csv-generate");
 //   // })
 // });
 
-
-
-
+module.exports = incomingData

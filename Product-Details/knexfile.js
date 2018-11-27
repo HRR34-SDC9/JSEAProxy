@@ -5,17 +5,16 @@ module.exports = {
   development: {
     client: 'mysql',
     connection: {
-      port: process.env.db_port,
+      // port: process.env.db_port,
       host: process.env.db_host,
-      database: process.env.db_name,
       user: process.env.db_user,
       password: process.env.db_key,
-      connectTimeout: 90000
+      database: process.env.db_name,
     },
-    debug: true,
+    debug: false,
     pool: {
-      min: 1,
-      max: 20,
+      min: 0,
+      max: 10
     },
     migrations: {
       directory: __dirname + '/knex/migrations',
