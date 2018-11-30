@@ -19,23 +19,29 @@ app.use((req, res, next) => {
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(`${__dirname}/../client/dist`, { maxAge: "365d" }));
+app.use(express.static(`${__dirname}/../client/dist`));
 
 app.get("/product/:id", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/dist/index.html"));
 });
 
 app.get("/data/:id", (req, res) => {
-  const id = req.params.id;
-  Products.findById(id).exec((err, result) => {
-    if (err) {
-      res.status(500).send("Could not receive GET request");
+  knex('products').where('_id', req.params.id).select()
+  .then(products => {
+    if (products.length) {
+      products[0].images = JSON.parse(products[0].images);
+      res.status(200).send(products[0]);
     } else {
-      res.send(result);
+      res.status(404).send({error: `Could not find product with id ${req.params.id}`});
     }
+  })
+  .catch(error => {
+    res.status(500).send({error});
   });
 });
 
+
+
 app.listen(PORT, () => {
-  console.log(`listening on port: ${PORT}`);
+  console.log(`listening on port: ${PORT}...`);
 });

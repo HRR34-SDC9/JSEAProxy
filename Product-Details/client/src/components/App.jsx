@@ -19,10 +19,11 @@ class App extends React.Component {
 
     axios
       .get(
-        `http://fectrailblazer-env.ckr33svztx.us-east-1.elasticbeanstalk.com/data/${id}`
+        `/data/${id}`
       )
       .then(res => {
         const data = res.data;
+        console.log(data);
         this.setState({
           product: data,
           isLoading: true
