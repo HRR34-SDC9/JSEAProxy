@@ -1,5 +1,4 @@
 require('dotenv').config();
-
 'use strict'
 /**
  * New Relic agent configuration.
