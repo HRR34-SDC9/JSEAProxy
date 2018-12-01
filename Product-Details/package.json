@@ -8,11 +8,12 @@
   },
   "scripts": {
     "start": "nodemon server/index.js",
-    "build-dev": "webpack --config webpack.dev.js --watch --open",
+    "build-dev": "webpack --config webpack.dev.js --watch",
     "build-prod": "webpack --config webpack.prod.js --open",
     "db:setup": "node database/seed.js",
     "test": "jest --watch --verbose",
-    "stage": "lint-staged"
+    "stage": "lint-staged",
+    "generate": "node database/generate.js"
   },
   "husky": {
     "hooks": {
@@ -31,7 +32,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FrontEndCapstone/Product-Details.git"
+    "url": "git+https://github.com/HRR34-SDC9/JSEAProxy.git"
   },
   "keywords": [],
   "author": "",
@@ -65,6 +66,7 @@
     "jest-environment-node": "^23.4.0",
     "lint-staged": "^8.0.0",
     "mongodb-memory-server": "^2.6.2",
+    "nodemon": "^1.18.6",
     "npm": "^6.4.1",
     "prettier": "^1.14.3",
     "regenerator-runtime": "^0.12.1",
@@ -75,12 +77,24 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "babel-preset-react": "^6.24.1",
     "body-parser": "^1.18.3",
+    "cassandra-driver": "^3.5.0",
+    "csv-generate": "^3.0.0",
+    "csv-parse": "^4.0.1",
+    "csv-parser": "^2.1.0",
+    "csv-stringify": "^4.3.1",
+    "dotenv": "^6.1.0",
     "express": "^4.16.4",
+    "fast-csv": "^2.4.1",
+    "knex": "^0.15.2",
     "mongodb": "^3.1.8",
     "mongoose": "^5.3.6",
-    "react": "^16.6.0",
-    "react-dom": "^16.6.0",
+    "mysql": "^2.16.0",
+    "mysql2": "^1.6.4",
+    "newrelic": "^4.11.0",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
     "react-star-ratings": "^2.3.0",
     "uglifyjs-webpack-plugin": "^2.0.1"
   }

@@ -23,7 +23,7 @@ const randomNum = () => Math.floor(Math.random() * Math.floor(100));
 const populateImages = index => {
   const images = [
     {
-      image: `https://s3-us-west-1.amazonaws.com/hrr34-trailblazer/${index}-min.jpg`,
+      image: `https://s3.amazonaws.com/sdc9-productimages/${randomNum()}.jpg`,
       color: capitalizeFirst(faker.commerce.color())
     }
   ];
@@ -37,7 +37,7 @@ const populateImages = index => {
   }
   for (let i = 1; i <= numOfImages; i++) {
     images.push({
-      image: `https://s3-us-west-1.amazonaws.com/hrr34-trailblazer/${randomNum()}-min.jpg`,
+      image: `https://s3.amazonaws.com/sdc9-productimages/${randomNum()}.jpg`,
       color: capitalizeFirst(faker.commerce.color())
     });
   }
@@ -54,7 +54,7 @@ const createMockProducts = () => {
       reviewCount: faker.random.number({ min: 20, max: 150 }),
       itemNum: i,
       price: faker.commerce.price(50, 500),
-      mainImage: `https://s3-us-west-1.amazonaws.com/hrr34-trailblazer/${i}-min.jpg`,
+      mainImage: `https://s3.amazonaws.com/sdc9-productimages/${randomNum()}.jpg`,
       images: populateImages(i)
     });
   }

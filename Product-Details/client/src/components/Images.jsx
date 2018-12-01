@@ -4,7 +4,7 @@ import styles from "../style.css.js";
 const Images = props => (
   <div>
     {props.product.images.map(image => (
-      <span className="details-image">
+      <span className="details-image" key={props.product._id}>
         <img
           style={styles.images}
           src={image.image}
