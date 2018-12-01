@@ -23,7 +23,6 @@ class App extends React.Component {
       )
       .then(res => {
         const data = res.data;
-        console.log(data);
         this.setState({
           product: data,
           isLoading: true

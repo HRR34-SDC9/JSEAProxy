@@ -22,7 +22,7 @@ const generate = require("csv-generate");
   const populateImages = index => {
     const images = [
       {
-        image: `https://s3-us-west-1.amazonaws.com/hrr34-trailblazer/${index}-min.jpg`,
+        image: `https://s3.amazonaws.com/sdc9-productimages/${randomNum()}.jpg`,
         color: capitalizeFirst(faker.commerce.color())
       }
     ];
@@ -36,7 +36,7 @@ const generate = require("csv-generate");
     }
     for (let i = 1; i <= numOfImages; i++) {
       images.push({
-        image: `https://s3-us-west-1.amazonaws.com/hrr34-trailblazer/${randomNum()}-min.jpg`,
+        image: `https://s3.amazonaws.com/sdc9-productimages/${randomNum()}.jpg`,
         color: capitalizeFirst(faker.commerce.color())
       });
     }
@@ -64,7 +64,7 @@ const generate = require("csv-generate");
         this.push('_id\tname\trating\treviewCount\titemNum\tprice\tmainImage\timages\n');
       }
 
-      this.push(`${count}\t${faker.commerce.productName()}\t${faker.finance.amount(1, 5, 1)}\t${faker.random.number({min: 20, max: 150})}\t${count}\t${faker.commerce.price(50, 500)}\thttps://s3-us-west-1.amazonaws.com/hrr34-trailblazer/${faker.random.number({ min: 1, max: 100 })}-min.jpg\t${JSON.stringify(populateImages(count))}\n`);
+      this.push(`${count}\t${faker.commerce.productName()}\t${faker.finance.amount(1, 5, 1)}\t${faker.random.number({min: 20, max: 150})}\t${count}\t${faker.commerce.price(50, 500)}\thttps://s3.amazonaws.com/sdc9-productimages/${faker.random.number({ min: 1, max: 100 })}.jpg\t${JSON.stringify(populateImages(count))}\n`);
 
       count++
       if (count === endCount) {
